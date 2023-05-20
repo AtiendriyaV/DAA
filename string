@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+int main()
+{
+    
+    char a[100];
+    printf("enter the string:");
+    scanf("%s",a);
+    
+    char b[100];
+    printf("value to found:");
+    scanf("%s",b);
+    
+    int len1 = strlen(a);
+    int len2 = strlen(b);
+
+  
+    if (len1 != len2)
+        return -1;
+
+    int front = 0;  
+    int back = len2 - 1;
+
+  int validshift[len1-len2+1];
+  int numshift = 0;
+  
+    while (front < len2 && back >= 0)
+    {
+       
+        if (a[front] == b[front]&&a[back]==b[back])
+        {
+            validshift[numshift++]=1;
+        }
+       
+          for(int i =0;i<strlen(numshift);i++)
+       {
+       printf("%d",i);
+       }
+
+    
+        front++;
+        back--;
+    }
+    
+    return 0;
+}
